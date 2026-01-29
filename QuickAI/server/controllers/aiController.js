@@ -10,6 +10,21 @@ import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
 // import { createRequire } from 'module';
 // const require = createRequire(import.meta.url);
 // const pdfParse = require('pdf-parse');
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import { pathToFileURL } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const workerPath = join(
+    __dirname,
+    '../node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs'
+);
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = pathToFileURL(workerPath).href;
+
+
 
 
 const AI = new OpenAI({
