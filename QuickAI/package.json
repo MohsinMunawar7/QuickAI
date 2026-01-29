@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@clerk/clerk-js": "^5.103.1",
+    "@clerk/clerk-react": "^5.53.4",
+    "lucide-react": "^0.552.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
